@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -83,6 +83,16 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'charset'  => 'utf8',
             'prefix'   => '',
+        ],
+
+        'redis' => [
+            'cluster' => false,
+            'default' => [
+                 'host'     => '127.0.0.1',
+                 'port'     => 6379,
+                 'database' => 0,
+            ],
+
         ],
 
     ],
